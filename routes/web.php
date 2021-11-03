@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
-use App\Http\Controllers\userController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,10 +23,14 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/searchUser', [userController::class, 'searchUser'])->name('searchUser');
-
-Route::get('/search', [studentController::class, 'search'])->name('search');
-
 Route::resource('students', StudentController::class);
 
-Route::resource('userCrud', userController::class);
+Route::get('/search', [StudentController::class, 'search'])->name('search');
+
+Route::get('students/{id}/nilai', [StudentController::class, 'nilai']);
+
+Route::resource('users', UserController::class);
+
+Route::get('/search_user', [UserController::class, 'search'])->name('search_user');
+
+Route::get('/students/{id}/report', [StudentController::class, 'report']);
