@@ -14,6 +14,7 @@
                     </div>
                     @endif
 
+                    <img width="150px" src="{{asset('storage/'.$student->photo)}}">
                     <form>
                         <input type="hidden" name="id" value="{{$student->id}}"></br>
                         <div class="form-group">
