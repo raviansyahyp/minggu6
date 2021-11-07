@@ -76,7 +76,6 @@ class StudentController extends Controller
         return view('students.view', ['student'=>$student]);
     }
 
-    
     /**
      * Show the form for editing the specified resource.
      *
